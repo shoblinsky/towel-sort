@@ -1,8 +1,15 @@
 module.exports = function towelSort(matrix) {
-  for (let i = 0; i < matrix.length; index++) {
-    for (let j = 0; j < matrix[i].length; index++) {
-
+  // const matrix = [
+  //   [ 1, 2, 3 ],
+  //   [ 4, 5, 6 ],
+  //   [ 7, 8, 9 ],
+  //  ]
+  const result = [];
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
+      const towelIndex = i % 2 === 0 ? j : matrix[i].length - j - 1;
+      result.push(matrix[i][towelIndex]);
     }
-
   }
+  return result;
 };
